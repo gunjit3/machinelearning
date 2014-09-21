@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<p>##Prediction of weight lifting style using Human Activity Recognition Data
+The data for this exercise comes from <a href="http://groupware.les.inf.puc-rio.br/har">Human Activity Recognition</a> where the authors tried to investigate &ldquo;how (well)&rdquo; an activity was performed by the wearer using the Weight Lifting Exercises Dataset.
+Six young health participants were asked to perform one set of 10 repetitions of the Unilateral Dumbbell Biceps Curl in five different fashions: exactly according to the specification (Class A), throwing the elbows to the front (Class B), lifting the dumbbell only halfway (Class C), lowering the dumbbell only halfway (Class D) and throwing the hips to the front (Class E).</p>
+
+<p>####Data Processing
+We assume the file is downloaded and put in the directory with the name rawdata.csv. We use the read.table method with seperator as comma and na.strings set to both empty string and NA. we print out the dimensions of the data. We see that the file has 19622 observations of 160 variables.</p>
+
+<pre><code class="r">data &lt;- read.table(&quot;rawdata.csv&quot;, as.is = T,  sep = &quot;,&quot;, fill = T, header = T, na.strings= c(&quot;&quot;,&quot;NA&quot;))
+dim(data)
+</code></pre>
+
+<pre><code>## [1] 19622   160
+</code></pre>
+
+<p>The classe variable contains the class to which we would like to predict to and train our classifier for. We convert the classe column to factor variable, since a factor variable is used by train method for classification.</p>
+
+<pre><code class="r">data$classe &lt;- as.factor(data$classe)
+</code></pre>
+
+<p>We now partition our dataset into training and test dataset and print out the number of observations in test and training dataset.</p>
+
+<pre><code class="r">suppressMessages(library(caret))
+set.seed(1231)
+inTrain &lt;- createDataPartition(data$classe,p = 0.7, list=F)
+training &lt;- data[inTrain,]
+testing &lt;- data[-inTrain,]
+dim(training)[1]; dim(testing)[1]
+</code></pre>
+
+<pre><code>## [1] 13737
+</code></pre>
+
+<pre><code>## [1] 5885
+</code></pre>
+
+<p>We now go and filter our variables with near zero variance. since these variables are predictors that mostly have one value.we use nearZeroVar function for this. We print out the number of features after removing these variables.</p>
+
+<pre><code class="r">nearZeroVariable &lt;- nearZeroVar(training)
+training &lt;- training[,-nearZeroVariable]
+testing &lt;- testing[,-nearZeroVariable]
+dim(training)[2]
+</code></pre>
+
+<pre><code>## [1] 126
+</code></pre>
+
+<p>we now remove all features that have NA values in them.This step is to clean data so that only columns with values contribute to the model. We first convert all columns to numeric,leaving the first 6 features since these do not contribute to the model and include identifiers. we also exlude the last variable since it is the classe which we want to predict and train our model to. We print out the number of features remaining.</p>
+
+<pre><code class="r">for (name in names(training[,8:dim(training)[2]-1])) { training[,name] &lt;- as.numeric(training[,name])}
+for (name in names(testing[,8:dim(testing)[2]-1])) { testing[,name] &lt;- as.numeric(testing[,name])}
+Nas &lt;- apply(training,2,function(x) { sum(is.na(x))})
+training &lt;- training[,Nas == 0]
+testing &lt;- testing[,Nas==0]
+dim(training)[2]
+</code></pre>
+
+<pre><code>## [1] 59
+</code></pre>
+
+<p>We see we are now down to 59 columns. We now preprocess our variables.We just scale and center all our features.</p>
+
+<pre><code class="r">pre &lt;- preProcess(training[,8:dim(training)[2]-1], method = c(&quot;scale&quot;,&quot;center&quot;))
+</code></pre>
+
+<p>####Building the Model
+We now transform our training and test datasets into PCA variables using the predict function on the preprocessing object. As above we leave the first 6 and last feature. we print the dimensions of training and testing data after preprocessing.</p>
+
+<pre><code class="r">trainPC &lt;- predict(pre,training[,8:dim(training)[2]-1])
+testPC &lt;- predict(pre,testing[,8:dim(testing)[2]-1])
+dim(trainPC)[2]
+</code></pre>
+
+<pre><code>## [1] 52
+</code></pre>
+
+<p>We now do a 2 fold cross validation using random forest to tune our mtry parameter which determines number of predictor variables to use while growing a forest</p>
+
+<pre><code class="r">library(randomForest)
+set.seed(12345)
+cvresult &lt;- rfcv(trainPC,as.factor(training$classe), cv.fold = 2)
+</code></pre>
+
+<p>We print out the number of variable and error associated with each variable. </p>
+
+<pre><code class="r">cvresult$n.var
+</code></pre>
+
+<pre><code>## [1] 52 26 13  6  3  1
+</code></pre>
+
+<pre><code class="r">cvresult$error.cv
+</code></pre>
+
+<pre><code>##      52      26      13       6       3       1 
+## 0.01274 0.01339 0.01871 0.06006 0.12281 0.60392
+</code></pre>
+
+<p>we now train our random forest using mtry as the value which gave minimum error in the cross validation step.</p>
+
+<pre><code class="r">fit &lt;- randomForest(trainPC,as.factor(training$classe), mtry = cvresult$n.var[cvresult$error.cv == min(cvresult$error.cv)] )
+</code></pre>
+
+<p>we print out our model.</p>
+
+<pre><code class="r">fit
+</code></pre>
+
+<pre><code>## 
+## Call:
+##  randomForest(x = trainPC, y = as.factor(training$classe), mtry = cvresult$n.var[cvresult$error.cv ==      min(cvresult$error.cv)]) 
+##                Type of random forest: classification
+##                      Number of trees: 500
+## No. of variables tried at each split: 52
+## 
+##         OOB estimate of  error rate: 1.24%
+## Confusion matrix:
+##      A    B    C    D    E class.error
+## A 3890    8    4    2    2    0.004096
+## B   33 2600   19    5    1    0.021821
+## C    2   26 2355   13    0    0.017112
+## D    3    5   30 2212    2    0.017762
+## E    0    1    5   10 2509    0.006337
+</code></pre>
+
+<p>We now use our testing data to predict the classes and print out the confusion matrix.</p>
+
+<pre><code class="r">conMat &lt;- confusionMatrix(predict(fit,newdata=testPC),testing$classe)
+conMat
+</code></pre>
+
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction    A    B    C    D    E
+##          A 1664   16    0    1    0
+##          B    8 1116    5    5    6
+##          C    0    5 1014   15    8
+##          D    1    2    7  941    3
+##          E    1    0    0    2 1065
+## 
+## Overall Statistics
+##                                         
+##                Accuracy : 0.986         
+##                  95% CI : (0.982, 0.988)
+##     No Information Rate : 0.284         
+##     P-Value [Acc &gt; NIR] : &lt;2e-16        
+##                                         
+##                   Kappa : 0.982         
+##  Mcnemar&#39;s Test P-Value : NA            
+## 
+## Statistics by Class:
+## 
+##                      Class: A Class: B Class: C Class: D Class: E
+## Sensitivity             0.994    0.980    0.988    0.976    0.984
+## Specificity             0.996    0.995    0.994    0.997    0.999
+## Pos Pred Value          0.990    0.979    0.973    0.986    0.997
+## Neg Pred Value          0.998    0.995    0.998    0.995    0.996
+## Prevalence              0.284    0.194    0.174    0.164    0.184
+## Detection Rate          0.283    0.190    0.172    0.160    0.181
+## Detection Prevalence    0.286    0.194    0.177    0.162    0.181
+## Balanced Accuracy       0.995    0.987    0.991    0.987    0.992
+</code></pre>
+
+<p>we see that our model performs well with 98.6 percent accuracy. The lower bound on accuracy being 98.2 and higher bound being 98.8 based on a 95 percent confidence interval, which means with 95 percent surity we can see that our model&#39;s accuracy will lie between those bounds. The out of sample error being 1.4 percent based on accuracy as a metric.</p>
+
+<p>We print out the most important variables used in the model.</p>
+
+<pre><code class="r">library(randomForest)
+varImpPlot(fit)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAArlBMVEX9/v0AAAAAADkAAGUAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OWU5OY85Zo85ZrU5j485j9plAABlADllAGVlOQBlOTllOY9lZgBlZjllZmVlZrVlj49ltf2POQCPOTmPOWWPZgCPZo+PjzmPj2WPtY+P27WP2/21ZgC1Zjm1tWW124+1/rW1/tq1/v2+vr7ajznaj2Xa24/a/rXa/tra/v39tWX924/9/rX9/tr9/v2fHHpUAAAAOnRSTlP///////////////////////////////////////////////////////////////////////////8AN8D/CgAAAAlwSFlzAAALEgAACxIB0t1+/AAAFs5JREFUeJztnQ9327YVxce4qR0vy5y4zZJVTraltbMkjtbWls3v/8VGgCAJyiT+8D2AkN79ncpNJZEHx7cgiJvH+/5SA5H8Ze0BgHWA8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8EKB8LHszqpnv70+ua3rm83aYyEA4WO5qTZ7fzhIIHwcj1dVVT3/4/XJN/WH07WHsxwIHweEF4u6wj+oNR6XellAeKFAeKFAeKFYwuPmThK98Luz6vnd2qNZDIQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXCoQXSqHCV4CM+zdcqvBrD+DwgfBCgfBCgfBCgfBCgfBCgfBCgfBCYRN+d37b/NP91yjVcfwRBxCeDISXw8iuowm/++tPJ7cPryuV/DEW/n2lsn+6j77qf/MB4RdQ1fYvjij8WaPuzUV9//xuT3j9hvpoe5pixn+v6+94xb0q82r/myh8o+fDZfN6c/30Un+zad5WH+NSXwSsM/5cX+Prxw97wn++1sK/bpaVZ9cQvgw413jHjH+82qiPatzcFQld+Ok1Xq/skx9xAOHJMAg/c1f/7Fp/1Pyref/xCnf1ZQHnTii8wu/OdFWPmuxJgfBkMOOFwiK8vb6Pb+Mer6qLZQNzAuHJcM34GeGZ7+Y7DlN4b2lrTmjCP1z+p71t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" alt="plot of chunk unnamed-chunk-13"/> </p>
+
+<p>####Predicting test results on the 20observations.</p>
+
+<p>We load in the data and performs all the necessary preprocessing on the dataset. we assume that the data is downloaded and saved as quiz.csv file.</p>
+
+<pre><code class="r">quiz &lt;- read.table(&quot;quiz.csv&quot;, as.is = T,  sep = &quot;,&quot;, fill = T, header = T, na.strings= c(&quot;&quot;,&quot;NA&quot;))
+quiz &lt;- quiz[,-nearZeroVariable]
+for (name in names(quiz[,8:dim(quiz)[2]-1])) { quiz[,name] &lt;- as.numeric(quiz[,name])}
+quiz &lt;- quiz[,Nas==0]
+quizPC &lt;- predict(pre,quiz[,8:dim(quiz)[2]-1])
+as.character(predict(fit,newdata=quizPC))
+</code></pre>
+
+<pre><code>##  [1] &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;E&quot; &quot;D&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;A&quot; &quot;E&quot; &quot;E&quot; &quot;A&quot;
+## [18] &quot;B&quot; &quot;B&quot; &quot;B&quot;
+</code></pre>
+
+</body>
+
+</html>
